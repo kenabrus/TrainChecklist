@@ -9,8 +9,8 @@ using TrainChecklist.Data;
 namespace TrainChecklist.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191204221354_Initial")]
-    partial class Initial
+    [Migration("20191205193829_InitialDb")]
+    partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
