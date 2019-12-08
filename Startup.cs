@@ -25,6 +25,9 @@ using System.IO;
 using System.Reflection;
 using Microsoft.Extensions.Hosting;
 using TrainChecklist.Data;
+using TrainChecklist.Repositories;
+using TrainChecklist.Mappers;
+using TrainChecklist.Services;
 
 namespace TrainChecklist
 {
@@ -49,6 +52,14 @@ namespace TrainChecklist
                     b => b.MigrationsAssembly("TrainChecklist")));
             // services.AddDbContext<ApplicationDbContext>(options =>
             //     options.UseSqlite("Data Source=wwwroot/TrainChecklist.db"));
+
+            //nowa instancja za każdym rządaniem
+            services.AddScoped<ITrainRepository, TrainRepository>();
+            services.AddScoped<ITrainService, TrainService>();
+
+            // jedna instancja dla całej aplikacji
+            services.AddSingleton(AutoMapperConfig.Initialize());
+            
             services.AddControllersWithViews();
         }
 

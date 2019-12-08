@@ -94,3 +94,8 @@ G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\TrainChecklist.MvcApp
 G:\csharp\.Net core\TrainChecklist\bin\Debug\netcoreapp3.0\MySqlConnector.dll
 G:\csharp\.Net core\TrainChecklist\bin\Debug\netcoreapp3.0\Pomelo.EntityFrameworkCore.MySql.dll
 G:\csharp\.Net core\TrainChecklist\bin\Debug\netcoreapp3.0\Pomelo.JsonObject.dll
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Trains\Index.cshtml.g.cs
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Trains\Delete.cshtml.g.cs
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Trains\Details.cshtml.g.cs
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Trains\Edit.cshtml.g.cs
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Trains\Create.cshtml.g.cs
