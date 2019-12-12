@@ -45,12 +45,17 @@ namespace TrainChecklist
         {
             // ===== Add our DbContext ========
             services.AddDbContext<ApplicationDbContext>(options =>
-            //     //options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
-                // options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+            //  //options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
+                options.UseSqlServer(Configuration.GetConnectionString("MssqlLocalDbConnection"),
+                    b => b.MigrationsAssembly("TrainChecklist")));
+                //options.UseMySql(Configuration.GetConnectionString("MySqlConnection"),
                 //     b => b.MigrationsAssembly("TrainChecklist")));
-                // options.UseMySql(Configuration.GetConnectionString("MySqlConnection"),
-                //     b => b.MigrationsAssembly("TrainChecklist")));
-                options.UseSqlite("Data Source=wwwroot/TrainChecklist.db"));
+                //options.UseSqlite("Data Source=wwwroot/TrainChecklist.db"));
+
+            // -----   DatpolDbContext  -----
+            services.AddDbContext<MachinesDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MssqlMachinesDbConnection"),
+                    b => b.MigrationsAssembly("TrainChecklist")));
 
             //nowa instancja za każdym rządaniem
             services.AddScoped<ITrainRepository, TrainRepository>();

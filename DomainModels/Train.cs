@@ -5,14 +5,9 @@ namespace TrainChecklist.DomainModels
 {
     public class Train
     {
-        [Key]
-        public int Id {get; set;}
-        [Display(Name ="Name")]
-        [StringLength(50, MinimumLength = 1)]        
+        public long Id {get; set;}        
         public string Name {get; set;}
-        [DataType(DataType.Date)]
         public DateTime BeginTime {get; set;}
-        [DataType(DataType.Date)]
         public DateTime EndTime {get; set;}
 
     }
