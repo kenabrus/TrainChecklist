@@ -15,11 +15,11 @@ namespace TrainChecklist.Repositories
         {
             _context = context;
         }
-        public async Task<Vehicle> Add(Vehicle entity)
+        public async Task Add(Vehicle entity)
         {
-            await _context.Set<Vehicle>().AddAsync(entity);
-            await _context.SaveChangesAsync();
-            return entity;
+            _context.Vehicles.Add(entity);
+            _context.SaveChanges();
+            // return entity;
         }
 
         public async Task Delete(Vehicle entity)

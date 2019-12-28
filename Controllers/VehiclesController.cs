@@ -24,7 +24,6 @@ namespace TrainChecklist.Controllers
         [Route("getAll")]
         public async Task<IEnumerable<Vehicle>> GetAll()
         {
-            // fetch all contact records
             return await _service.GetAllAsync();
         }
 
@@ -32,7 +31,6 @@ namespace TrainChecklist.Controllers
         //[Route("get")]
         public async Task<IActionResult> GetById(long id)
         {
-            // filter by id
             var item = await _service.GetById(id);
             if (item == null)
             {
@@ -44,7 +42,6 @@ namespace TrainChecklist.Controllers
         //[Route("post")]
         public IActionResult Create([FromBody] VehicleDto item)
         {
-            // set bad request if contact data is not provided in body
             if (item == null)
             {
                 return BadRequest();
@@ -59,7 +56,6 @@ namespace TrainChecklist.Controllers
         // [Route("put")]
         public async Task<IActionResult> Update(long id, [FromBody] VehicleDto item)
         {
-            // set bad request if contact data is not provided in body
             if (item == null || id == 0)
             {
                 return BadRequest();
@@ -73,7 +69,7 @@ namespace TrainChecklist.Controllers
 
             await _service.UpdateAsync(id, item);
 
-            return Ok( new { message= "Contact is updated successfully !"});
+            return Ok( new { message= "Vehicle is updated successfully !"});
         }
 
 
@@ -87,7 +83,7 @@ namespace TrainChecklist.Controllers
                 return NotFound();
             }
             await _service.DeleteAsync(id);
-            return Ok( new { message= "Contact is deleted successfully !"});
+            return Ok( new { message= "Vehicle is deleted successfully !"});
         }
     }
 }
