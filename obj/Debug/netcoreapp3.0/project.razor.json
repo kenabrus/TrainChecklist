@@ -14354,8 +14354,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Trains\\Edit.cshtml",
-      "TargetPath": "Views\\Trains\\Edit.cshtml",
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Account\\Login.cshtml",
+      "TargetPath": "Views\\Account\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14374,33 +14374,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Trains\\Delete.cshtml",
-      "TargetPath": "Views\\Trains\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Trains\\Index.cshtml",
-      "TargetPath": "Views\\Trains\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Trains\\Details.cshtml",
-      "TargetPath": "Views\\Trains\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Trains\\Create.cshtml",
-      "TargetPath": "Views\\Trains\\Create.cshtml",
       "FileKind": "mvc"
     }
   ],
