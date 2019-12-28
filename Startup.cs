@@ -25,9 +25,9 @@ using System.IO;
 using System.Reflection;
 using Microsoft.Extensions.Hosting;
 using TrainChecklist.Data;
-//using TrainChecklist.Repositories;
 using TrainChecklist.Mappers;
-//using TrainChecklist.Services;
+using TrainChecklist.Repositories;
+using TrainChecklist.Services;
 
 namespace TrainChecklist
 {
@@ -58,13 +58,19 @@ namespace TrainChecklist
             //         b => b.MigrationsAssembly("TrainChecklist")));
 
             //nowa instancja za każdym rządaniem
-            // services.AddScoped<ITrainRepository, TrainRepository>();
-            // services.AddScoped<ITrainService, TrainService>();
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
+            services.AddScoped<IVehicleService, VehicleService>();
 
             // jedna instancja dla całej aplikacji
             services.AddSingleton(AutoMapperConfig.Initialize());
             
             services.AddControllersWithViews();
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,6 +92,16 @@ namespace TrainChecklist
             app.UseRouting();
 
             app.UseAuthorization();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseEndpoints(endpoints =>
             {

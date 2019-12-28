@@ -9,8 +9,8 @@ namespace TrainChecklist.DomainModels
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public T Id {get; private set;}
-        public DateTime CreatedAt {get; private set;}
-        public DateTime ModifiedAt {get; private set;}
+        public DateTime CreatedAt {get; protected set;}
+        public DateTime ModifiedAt {get; protected set;}
 
     }
 }

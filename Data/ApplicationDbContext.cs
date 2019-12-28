@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-//using TrainChecklist.DomainModels;
+using TrainChecklist.DomainModels;
 
 namespace TrainChecklist.Data
 {
@@ -10,11 +10,11 @@ namespace TrainChecklist.Data
         {
         }
         
-
+        public DbSet<Vehicle> Vehicles {get; set;}
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
-
+            modelBuilder.ApplyConfiguration(new VehicleTableConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }
