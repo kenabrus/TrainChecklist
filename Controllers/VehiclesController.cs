@@ -31,7 +31,7 @@ namespace TrainChecklist.Controllers
         //[Route("get")]
         public async Task<IActionResult> GetById(long id)
         {
-            var item = await _service.GetById(id);
+            var item = await _service.GetByIdAsync(id);
             if (item == null)
             {
                 return NotFound();
@@ -61,7 +61,7 @@ namespace TrainChecklist.Controllers
                 return BadRequest();
             }
 
-            var vehicle =  await _service.GetById(id);
+            var vehicle =  await _service.GetByIdAsync(id);
             if (vehicle == null)
             {
                 return NotFound();
@@ -77,7 +77,7 @@ namespace TrainChecklist.Controllers
         // [Route("delete")]
         public async Task<IActionResult> Delete(long id)
         {
-            var contact = await _service.GetById(id);
+            var contact = await _service.GetByIdAsync(id);
             if (contact == null)
             {
                 return NotFound();

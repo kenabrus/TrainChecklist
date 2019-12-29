@@ -6,10 +6,10 @@ namespace TrainChecklist.Repositories
 {
     public interface IVehicleRepository
     {
-        Task<Vehicle> GetById(long id);
+        Task<Vehicle> GetByIdAsync(long id);
         Task<List<Vehicle>> GetAllAsync();
-        Task Add(Vehicle entity);
-        Task Update(Vehicle entity);
-        Task Delete(Vehicle entity);
+        Task AddAsync(Vehicle entity);
+        Task UpdateAsync(Vehicle entity);
+        Task DeleteAsync(Vehicle entity);
     }
 }

@@ -7,7 +7,7 @@ namespace TrainChecklist.Services
 {
     public interface IVehicleService
     {
-        Task<Vehicle> GetById(long id);
+        Task<Vehicle> GetByIdAsync(long id);
         Task<IEnumerable<Vehicle>> GetAllAsync();
         Task AddAsync(VehicleDto entity);
         Task UpdateAsync(long id, VehicleDto entity);

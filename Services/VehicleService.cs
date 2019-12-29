@@ -22,17 +22,17 @@ namespace TrainChecklist.Services
         public async Task AddAsync(VehicleDto entity)
         {
             var vehicle = Vehicle.Create(entity.Name);
-            await _repository.Add(vehicle);
+            await _repository.AddAsync(vehicle);
         }
 
         public async Task DeleteAsync(long id)
         {
-            var vehicle = await GetById(id);
-            await _repository.Delete(vehicle);
+            var vehicle = await GetByIdAsync(id);
+            await _repository.DeleteAsync(vehicle);
         }
 
-        public async Task<Vehicle> GetById(long id)
-            => await _repository.GetById(id);
+        public async Task<Vehicle> GetByIdAsync(long id)
+            => await _repository.GetByIdAsync(id);
 
         public async Task<IEnumerable<Vehicle>> GetAllAsync()
         {
@@ -41,10 +41,10 @@ namespace TrainChecklist.Services
 
         public async Task UpdateAsync(long id, VehicleDto entity)
         {
-            var vehicle = await GetById(id);
+            var vehicle = await GetByIdAsync(id);
             vehicle.SetName(entity.Name);
             vehicle.SetModifiedAt(DateTime.UtcNow);
-            await _repository.Update(vehicle);
+            await _repository.UpdateAsync(vehicle);
         }
     }
 }
