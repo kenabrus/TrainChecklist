@@ -8004,12 +8004,11 @@
       ]
     },
     "System.Runtime.Serialization.Formatters/4.3.0": {
-      "sha512": "KT591AkTNFOTbhZlaeMVvfax3RqhH1EJlcwF50Wm7sfnBLuHiOeZRRKrr1ns3NESkM20KPZ5Ol/ueMq5vg4QoQ==",
+      "sha512": "49Wg3JdDHXM3GMKGplAV88XZIr3Ll9a/qc9MHYKY3YYqxaCKVzqfuekkWF0kmObsNzSZnQ6+5r5TI3WdkuR7Hw==",
       "type": "package",
       "path": "system.runtime.serialization.formatters/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9255,12 +9254,11 @@
       ]
     },
     "System.ValueTuple/4.3.0": {
-      "sha512": "cNLEvBX3d6MMQRZe3SMFNukVbitDAEpVZO17qa0/2FHxZ7Y7PpFRpr6m2615XYM/tYYYf0B+WyHNujqIw8Luwg==",
+      "sha512": "/TiPAeo9xfB+6X9vmeACE6loFWIuVLeCB+fAAWDA6pQj0GqMb6H7jexwqiGWn+FMjTa+cjGqafUC/FQhE4+96A==",
       "type": "package",
       "path": "system.valuetuple/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/.xml",
@@ -9617,24 +9615,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Marek\\.nuget\\packages\\": {}
+    "C:\\Users\\kenabrus\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\TrainChecklist\\TrainChecklist.csproj",
+      "projectUniqueName": "G:\\csharp\\.Net core\\TrainChecklist\\TrainChecklist.csproj",
       "projectName": "TrainChecklist",
-      "projectPath": "C:\\TrainChecklist\\TrainChecklist.csproj",
-      "packagesPath": "C:\\Users\\Marek\\.nuget\\packages\\",
-      "outputPath": "C:\\TrainChecklist\\obj\\",
+      "projectPath": "G:\\csharp\\.Net core\\TrainChecklist\\TrainChecklist.csproj",
+      "packagesPath": "C:\\Users\\kenabrus\\.nuget\\packages\\",
+      "outputPath": "G:\\csharp\\.Net core\\TrainChecklist\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Marek\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\kenabrus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -9736,7 +9740,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

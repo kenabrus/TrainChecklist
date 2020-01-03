@@ -26,8 +26,8 @@ using System.Reflection;
 using Microsoft.Extensions.Hosting;
 using TrainChecklist.Data;
 using TrainChecklist.Mappers;
-using TrainChecklist.Repositories;
-using TrainChecklist.Services;
+// using TrainChecklist.Repositories;
+// using TrainChecklist.Services;
 
 namespace TrainChecklist
 {
@@ -46,10 +46,10 @@ namespace TrainChecklist
             // ===== Add our DbContext ========
             services.AddDbContext<ApplicationDbContext>(options =>
             //  //options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
-                options.UseSqlServer(Configuration.GetConnectionString("MssqlLocalDbConnection"),
-                    b => b.MigrationsAssembly("TrainChecklist")));
-                //options.UseMySql(Configuration.GetConnectionString("MySqlConnection"),
+                // options.UseSqlServer(Configuration.GetConnectionString("MssqlLocalDbConnection"),
                 //     b => b.MigrationsAssembly("TrainChecklist")));
+                options.UseMySql(Configuration.GetConnectionString("MySqlConnection"),
+                    b => b.MigrationsAssembly("TrainChecklist")));
                 //options.UseSqlite("Data Source=wwwroot/TrainChecklist.db"));
 
             // -----   DatabaseFirstDbContext  -----
@@ -58,8 +58,8 @@ namespace TrainChecklist
             //         b => b.MigrationsAssembly("TrainChecklist")));
 
             //nowa instancja za każdym rządaniem
-            services.AddScoped<IVehicleRepository, VehicleRepository>();
-            services.AddScoped<IVehicleService, VehicleService>();
+            // services.AddScoped<IVehicleRepository, VehicleRepository>();
+            // services.AddScoped<IVehicleService, VehicleService>();
 
             // jedna instancja dla całej aplikacji
             services.AddSingleton(AutoMapperConfig.Initialize());

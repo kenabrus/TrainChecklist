@@ -10,16 +10,18 @@ namespace TrainChecklist.Data
         {
         }
         
-        public DbSet<Vehicle> Vehicles {get; set;}
-        public DbSet<Element> Elements {get; set;}
+        // public DbSet<Vehicle> Vehicles {get; set;}
+        // public DbSet<Element> Elements {get; set;}
+        // public DbSet<Company> Companies {get; set;}
+        public DbSet<Pojazd> ListaPojazdowWBazie {get; set;}
+        
 
-        public DbSet<Company> Companies {get; set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new VehicleTableConfiguration());
-            modelBuilder.ApplyConfiguration(new ElementTableConfiguration());
-            modelBuilder.ApplyConfiguration(new CompanyTableConfiguration());
+            // modelBuilder.ApplyConfiguration(new VehicleTableConfiguration());
+            // modelBuilder.ApplyConfiguration(new ElementTableConfiguration());
+            // modelBuilder.ApplyConfiguration(new CompanyTableConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }
