@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TrainChecklist.Data;
 using TrainChecklist.DomainModels;
+using System.Linq;
 
 namespace TrainChecklist.Repositories
 {
@@ -17,13 +18,14 @@ namespace TrainChecklist.Repositories
         }
         public async Task AddAsync(Vehicle entity)
         {
-            _context.Set<Vehicle>().Add(entity);
-            await _context.SaveChangesAsync();
+            _context.Vehicles.Add(entity);
+            _context.SaveChanges();
             // return entity;
         }
 
         public async Task DeleteAsync(Vehicle entity)
         {
+            entity.DeleteAllElements();
             _context.Set<Vehicle>().Remove(entity);
             await _context.SaveChangesAsync();
         }

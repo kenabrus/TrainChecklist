@@ -7,14 +7,14 @@ namespace TrainChecklist.Data
 {
     public class VehicleTableConfiguration : IEntityTypeConfiguration<Vehicle>
     {
-        public  void Configure(EntityTypeBuilder<Vehicle> builder)
+        public  void Configure(EntityTypeBuilder<Vehicle> b)
         {
             // Set configuration for entity
             //builder.ToTable("Student", "UniversityOnionSchema");
-            builder.ToTable("Vehicle");
+            b.ToTable("Vehicle");
 
             // Set key for entity
-            builder.HasKey(p => p.Id);
+            // b.HasKey(p => p.Id);
 
             // Set configuration for columns
             //builder
@@ -23,7 +23,7 @@ namespace TrainChecklist.Data
             //    .IsRequired();
             //.HasComputedColumnSql("NEXT VALUE FOR [Sequences].[ID]");
 
-            builder.Property(p => p.Name).HasColumnType("nvarchar(64)").IsRequired();
+            b.Property(p => p.Name).HasColumnType("nvarchar(64)").IsRequired();
 
             Console.WriteLine($"VehicleTableConfiguration");
         }

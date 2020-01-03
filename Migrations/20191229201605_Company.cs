@@ -1,32 +1,32 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TrainChecklist.Migrations
 {
-    public partial class InitialDb : Migration
+    public partial class Company : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Vehicle",
+                name: "Company",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
-                    ModifiedAt = table.Column<DateTime>(nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(64)", nullable: false)
+                    CompanyName = table.Column<string>(nullable: true),
+                    Nip = table.Column<string>(maxLength: 10, nullable: false),
+                    Street = table.Column<string>(maxLength: 64, nullable: false),
+                    ZipCode = table.Column<string>(maxLength: 6, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vehicle", x => x.Id);
+                    table.PrimaryKey("PK_Company", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Vehicle");
+                name: "Company");
         }
     }
 }

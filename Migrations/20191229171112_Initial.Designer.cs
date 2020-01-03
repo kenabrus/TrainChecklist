@@ -10,8 +10,8 @@ using TrainChecklist.Data;
 namespace TrainChecklist.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191228194910_InitialDb")]
-    partial class InitialDb
+    [Migration("20191229171112_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,27 @@ namespace TrainChecklist.Migrations
                 .HasAnnotation("ProductVersion", "3.1.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("TrainChecklist.DomainModels.Element", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<long?>("VehicleId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VehicleId");
+
+                    b.ToTable("Element");
+                });
 
             modelBuilder.Entity("TrainChecklist.DomainModels.Vehicle", b =>
                 {
@@ -41,6 +62,13 @@ namespace TrainChecklist.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Vehicle");
+                });
+
+            modelBuilder.Entity("TrainChecklist.DomainModels.Element", b =>
+                {
+                    b.HasOne("TrainChecklist.DomainModels.Vehicle", null)
+                        .WithMany("Elements")
+                        .HasForeignKey("VehicleId");
                 });
 #pragma warning restore 612, 618
         }

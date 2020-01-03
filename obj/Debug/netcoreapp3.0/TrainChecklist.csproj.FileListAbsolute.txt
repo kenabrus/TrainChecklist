@@ -122,3 +122,5 @@ G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\TrainChecklist.Views.
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\TrainChecklist.csproj.CopyComplete
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\TrainChecklist.dll
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\TrainChecklist.pdb
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout2.cshtml.g.cs
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Company\Index.cshtml.g.cs

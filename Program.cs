@@ -25,7 +25,7 @@ namespace TrainChecklist
                 {
                     var serviceProvider = services.GetRequiredService<IServiceProvider>();
                     var configuration = services.GetRequiredService<IConfiguration>();
-                    Seed.CreateTrains(serviceProvider, configuration).Wait();
+                    Seed.InsertValuesInDatabase(serviceProvider, configuration).Wait();
                 }
                 catch(Exception ex)
                 {
