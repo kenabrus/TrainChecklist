@@ -1,0 +1,94 @@
+dotnet restore
+dotnet build
+dotnet run
+
+dotnet ef migrations add InitialDb      // powstaje katalog Migrations z klasami do inicjalizacja bazy danych
+dotnet ef database update                  // powstaje baza danych
+
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/kenabrus/TrainChecklist.git
+git push -u origin master
+git pull
+
+
+dotnet add package Pomelo.EntityFrameworkCore.MySql --version 3.0.1
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+
+npm install ember-cli-materialize --save-dev
+
+Zainstaluj Github ze strony
+Utwórz katalog TrainChecklist
+Otwórz VisualStudioCode i przejdź do powyższego katalogu
+
+git clone https://github.com/kenabrus/TrainChecklist.git .
+dotnet restore
+dotnet build
+dotnet run
+
+---------------  ENTITY FRAMEWORK  --------------
+
+https://www.learnentityframeworkcore.com/migrations/commands/cli-commands
+https://www.entityframeworktutorial.net/efcore/cli-commands-for-ef-core-migration.aspx
+
+
+------------- DB First ---------------
+Poniższy przykład szkieletuje wszystkie schematy i tabele i umieszcza nowe pliki w folderze models.
+dotnet ef dbcontext scaffold "Server=(localdb)\v11.0;Database=Datpol;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o DomainModels --context-dir Data -c DatpolDbContext
+
+Poniższy przykład szkieletuje tylko wybrane tabele i tworzy kontekst w osobnym folderze o określonej nazwie:
+dotnet ef dbcontext scaffold "Server=(localdb)\v11.0;Database=Datpol;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -t Blog -t Post --context-dir Data -c DatpolDbContext
+
+dotnet ef dbcontext scaffold "Server=(localdb)\v11.0;Database=Datpol;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o DomainModels --context-dir Data -c MachinesDbContext
+
+dotnet ef migrations add InitialApplicationDbContext -c ApplicationDbContext
+dotnet ef database update -c ApplicationDbContext
+
+dotnet ef migrations add InitialMachinesDbContext -c MachinesDbContext
+dotnet ef database update -c MachinesDbContext
+
+dotnet ef database drop -c ApplicationDbContext
+
+--------------------------------------
+
+PS G:\csharp\.Net core\TrainChecklist> dotnet ef dbcontext scaffold --help
+
+
+Usage: dotnet ef dbcontext scaffold [arguments] [options]
+
+Arguments:
+  <CONNECTION>  The connection string to the database.
+  <PROVIDER>    The provider to use. (E.g. Microsoft.EntityFrameworkCore.SqlServer)
+
+Options:
+  -d|--data-annotations                  Use attributes to configure the model (where possible). If omitted, only the fluent API is used.
+  -c|--context <NAME>                    The name of the DbContext.
+  --context-dir <PATH>                   The directory to put DbContext file in. Paths are relative to the project directory.
+  -f|--force                             Overwrite existing files.
+  -o|--output-dir <PATH>                 The directory to put files in. Paths are relative to the project directory.
+  --schema <SCHEMA_NAME>...              The schemas of tables to generate entity types for.
+  -t|--table <TABLE_NAME>...             The tables to generate entity types for.
+  --use-database-names                   Use table and column names directly from the database.
+  --json                                 Show JSON output.
+  -p|--project <PROJECT>                 The project to use.
+  -s|--startup-project <PROJECT>         The startup project to use.
+  --framework <FRAMEWORK>                The target framework.
+  --configuration <CONFIGURATION>        The configuration to use.
+  --runtime <RUNTIME_IDENTIFIER>         The runtime to use.
+  --msbuildprojectextensionspath <PATH>  The MSBuild project extensions path. Defaults to "obj".
+  --no-build                             Don't build the project. Only use this when the build is up-to-date.
+  -h|--help                              Show help information
+  -v|--verbose                           Show verbose output.
+  --no-color                             Don't colorize output.
+  --prefix-output                        Prefix output with level.
+PS G:\csharp\.Net core\TrainChecklist>
+
+
+Vehicle
+Element
+Test 
+TestElement
+User
+
