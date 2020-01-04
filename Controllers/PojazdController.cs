@@ -10,22 +10,23 @@ using TrainChecklist.Models;
 
 namespace TrainChecklist.Controllers
 {
-    public class ProjektController : Controller
+    public class PojazdController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ProjektController(ApplicationDbContext context)
+        public PojazdController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Projekt
+        // GET: Pojazd
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Projekty.ToListAsync());
+            var applicationDbContext = _context.Pojazdy.Include(p => p.Projekt);
+            return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Projekt/Details/5
+        // GET: Pojazd/Details/5
         public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
@@ -33,39 +34,42 @@ namespace TrainChecklist.Controllers
                 return NotFound();
             }
 
-            var projekt = await _context.Projekty
+            var pojazd = await _context.Pojazdy
+                .Include(p => p.Projekt)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (projekt == null)
+            if (pojazd == null)
             {
                 return NotFound();
             }
 
-            return View(projekt);
+            return View(pojazd);
         }
 
-        // GET: Projekt/Create
+        // GET: Pojazd/Create
         public IActionResult Create()
         {
+            ViewData["ProjektId"] = new SelectList(_context.Projekty, "Id", "NazwaProjektu");
             return View();
         }
 
-        // POST: Projekt/Create
+        // POST: Pojazd/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NazwaProjektu,DataRozpoczeciaProjektu,DataZakonczeniaProjektu")] Projekt projekt)
+        public async Task<IActionResult> Create([Bind("Id,NazwaPojazdu,ProjektId")] Pojazd pojazd)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(projekt);
+                _context.Add(pojazd);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(projekt);
+            ViewData["ProjektId"] = new SelectList(_context.Projekty, "Id", "NazwaProjektu", pojazd.ProjektId);
+            return View(pojazd);
         }
 
-        // GET: Projekt/Edit/5
+        // GET: Pojazd/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
@@ -73,22 +77,23 @@ namespace TrainChecklist.Controllers
                 return NotFound();
             }
 
-            var projekt = await _context.Projekty.FindAsync(id);
-            if (projekt == null)
+            var pojazd = await _context.Pojazdy.FindAsync(id);
+            if (pojazd == null)
             {
                 return NotFound();
             }
-            return View(projekt);
+            ViewData["ProjektId"] = new SelectList(_context.Projekty, "Id", "NazwaProjektu", pojazd.ProjektId);
+            return View(pojazd);
         }
 
-        // POST: Projekt/Edit/5
+        // POST: Pojazd/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,NazwaProjektu,DataRozpoczeciaProjektu,DataZakonczeniaProjektu")] Projekt projekt)
+        public async Task<IActionResult> Edit(long id, [Bind("Id,NazwaPojazdu,ProjektId")] Pojazd pojazd)
         {
-            if (id != projekt.Id)
+            if (id != pojazd.Id)
             {
                 return NotFound();
             }
@@ -97,12 +102,12 @@ namespace TrainChecklist.Controllers
             {
                 try
                 {
-                    _context.Update(projekt);
+                    _context.Update(pojazd);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProjektExists(projekt.Id))
+                    if (!PojazdExists(pojazd.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +118,11 @@ namespace TrainChecklist.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(projekt);
+            ViewData["ProjektId"] = new SelectList(_context.Projekty, "Id", "NazwaProjektu", pojazd.ProjektId);
+            return View(pojazd);
         }
 
-        // GET: Projekt/Delete/5
+        // GET: Pojazd/Delete/5
         public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
@@ -124,30 +130,31 @@ namespace TrainChecklist.Controllers
                 return NotFound();
             }
 
-            var projekt = await _context.Projekty
+            var pojazd = await _context.Pojazdy
+                .Include(p => p.Projekt)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (projekt == null)
+            if (pojazd == null)
             {
                 return NotFound();
             }
 
-            return View(projekt);
+            return View(pojazd);
         }
 
-        // POST: Projekt/Delete/5
+        // POST: Pojazd/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            var projekt = await _context.Projekty.FindAsync(id);
-            _context.Projekty.Remove(projekt);
+            var pojazd = await _context.Pojazdy.FindAsync(id);
+            _context.Pojazdy.Remove(pojazd);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProjektExists(long id)
+        private bool PojazdExists(long id)
         {
-            return _context.Projekty.Any(e => e.Id == id);
+            return _context.Pojazdy.Any(e => e.Id == id);
         }
     }
 }

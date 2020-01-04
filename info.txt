@@ -12,6 +12,7 @@ git commit -m "first commit"
 git remote add origin https://github.com/kenabrus/TrainChecklist.git
 git push -u origin master
 git pull
+git clone https://github.com/kenabrus/TrainChecklist.git .
 
 
 dotnet add package Pomelo.EntityFrameworkCore.MySql --version 3.0.1

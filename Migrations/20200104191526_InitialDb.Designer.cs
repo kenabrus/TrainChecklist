@@ -9,7 +9,7 @@ using TrainChecklist.Data;
 namespace TrainChecklist.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200104172045_InitialDb")]
+    [Migration("20200104191526_InitialDb")]
     partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -215,6 +215,27 @@ namespace TrainChecklist.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("TrainChecklist.Models.Pojazd", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("NazwaPojazdu")
+                        .IsRequired()
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
+
+                    b.Property<long>("ProjektId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjektId");
+
+                    b.ToTable("Pojazdy");
+                });
+
             modelBuilder.Entity("TrainChecklist.Models.Projekt", b =>
                 {
                     b.Property<long>("Id")
@@ -228,11 +249,13 @@ namespace TrainChecklist.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("NazwaProjektu")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .IsRequired()
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
-                    b.ToTable("Projekts");
+                    b.ToTable("Projekty");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -282,6 +305,15 @@ namespace TrainChecklist.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("TrainChecklist.Models.Pojazd", b =>
+                {
+                    b.HasOne("TrainChecklist.Models.Projekt", "Projekt")
+                        .WithMany("Pojazdy")
+                        .HasForeignKey("ProjektId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

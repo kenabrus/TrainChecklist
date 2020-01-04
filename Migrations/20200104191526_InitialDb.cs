@@ -48,18 +48,18 @@ namespace TrainChecklist.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Projekts",
+                name: "Projekty",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    NazwaProjektu = table.Column<string>(nullable: true),
+                    NazwaProjektu = table.Column<string>(maxLength: 50, nullable: false),
                     DataRozpoczeciaProjektu = table.Column<DateTime>(nullable: false),
                     DataZakonczeniaProjektu = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Projekts", x => x.Id);
+                    table.PrimaryKey("PK_Projekty", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -168,6 +168,26 @@ namespace TrainChecklist.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Pojazdy",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    NazwaPojazdu = table.Column<string>(maxLength: 100, nullable: false),
+                    ProjektId = table.Column<long>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pojazdy", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pojazdy_Projekty_ProjektId",
+                        column: x => x.ProjektId,
+                        principalTable: "Projekty",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -204,6 +224,11 @@ namespace TrainChecklist.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pojazdy_ProjektId",
+                table: "Pojazdy",
+                column: "ProjektId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -224,13 +249,16 @@ namespace TrainChecklist.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Projekts");
+                name: "Pojazdy");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Projekty");
         }
     }
 }

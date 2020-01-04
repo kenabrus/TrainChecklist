@@ -258,6 +258,11 @@ G:\csharp\.Net core\TrainChecklist\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.Cod
 G:\csharp\.Net core\TrainChecklist\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\TrainChecklist.MvcApplicationPartsAssemblyInfo.cs
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\TrainChecklist.MvcApplicationPartsAssemblyInfo.cache
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Pojazd\Create.cshtml.g.cs
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Pojazd\Delete.cshtml.g.cs
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Pojazd\Details.cshtml.g.cs
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Pojazd\Edit.cshtml.g.cs
+G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Pojazd\Index.cshtml.g.cs
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Projekt\Create.cshtml.g.cs
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Projekt\Delete.cshtml.g.cs
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Projekt\Details.cshtml.g.cs
