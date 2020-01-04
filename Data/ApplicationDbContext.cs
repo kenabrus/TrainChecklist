@@ -14,6 +14,7 @@ namespace TrainChecklist.Data
         // public DbSet<Element> Elements {get; set;}
         // public DbSet<Company> Companies {get; set;}
         public DbSet<Pojazd> ListaPojazdowWBazie {get; set;}
+        public DbSet<Protokol> Protokoly {get; set;}
         
 
         
