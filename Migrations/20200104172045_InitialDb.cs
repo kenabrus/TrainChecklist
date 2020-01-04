@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TrainChecklist.Data.Migrations
+namespace TrainChecklist.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class InitialDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,11 +48,26 @@ namespace TrainChecklist.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Projekts",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    NazwaProjektu = table.Column<string>(nullable: true),
+                    DataRozpoczeciaProjektu = table.Column<DateTime>(nullable: false),
+                    DataZakonczeniaProjektu = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Projekts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     RoleId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -73,7 +88,7 @@ namespace TrainChecklist.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -162,8 +177,7 @@ namespace TrainChecklist.Data.Migrations
                 name: "RoleNameIndex",
                 table: "AspNetRoles",
                 column: "NormalizedName",
-                unique: true,
-                filter: "[NormalizedName] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserClaims_UserId",
@@ -189,8 +203,7 @@ namespace TrainChecklist.Data.Migrations
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
-                unique: true,
-                filter: "[NormalizedUserName] IS NOT NULL");
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -209,6 +222,9 @@ namespace TrainChecklist.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Projekts");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

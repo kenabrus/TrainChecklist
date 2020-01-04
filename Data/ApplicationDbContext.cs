@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TrainChecklist.Models;
 
 namespace TrainChecklist.Data
 {
@@ -12,5 +13,7 @@ namespace TrainChecklist.Data
             : base(options)
         {
         }
+
+        public DbSet<Projekt> Projekts {get; set;}
     }
 }
