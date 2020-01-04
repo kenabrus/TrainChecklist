@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kenabrus\\source\\repos\\TrainChecklist\\TrainChecklist.csproj": {}
+    "G:\\csharp\\.Net core\\TrainChecklist\\TrainChecklist.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kenabrus\\source\\repos\\TrainChecklist\\TrainChecklist.csproj": {
+    "G:\\csharp\\.Net core\\TrainChecklist\\TrainChecklist.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kenabrus\\source\\repos\\TrainChecklist\\TrainChecklist.csproj",
+        "projectUniqueName": "G:\\csharp\\.Net core\\TrainChecklist\\TrainChecklist.csproj",
         "projectName": "TrainChecklist",
-        "projectPath": "C:\\Users\\kenabrus\\source\\repos\\TrainChecklist\\TrainChecklist.csproj",
+        "projectPath": "G:\\csharp\\.Net core\\TrainChecklist\\TrainChecklist.csproj",
         "packagesPath": "C:\\Users\\kenabrus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kenabrus\\source\\repos\\TrainChecklist\\obj\\",
+        "outputPath": "G:\\csharp\\.Net core\\TrainChecklist\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,6 +41,30 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Autofac": {
+              "target": "Package",
+              "version": "[4.9.4, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Core": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.0.0, )"
@@ -53,13 +77,47 @@
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Microsoft.AspNetCore.Mvc.Formatters.Json": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0-rc4, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            },
+            "fluentvalidation.aspnetcore": {
+              "target": "Package",
+              "version": "[7.3.3, )"
             }
           },
           "imports": [

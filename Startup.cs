@@ -28,8 +28,14 @@ namespace TrainChecklist
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            //  options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
+            //  options.UseSqlServer(
+            //        Configuration.GetConnectionString("DefaultConnection")));
+
+            options.UseMySql(Configuration.GetConnectionString("MySqlConnection"),
+                b => b.MigrationsAssembly("TrainChecklist")));
+            //options.UseSqlite("Data Source=wwwroot/TrainChecklist.db"));
+            
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
