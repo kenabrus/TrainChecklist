@@ -268,3 +268,4 @@ G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Projekt\D
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Projekt\Details.cshtml.g.cs
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Projekt\Edit.cshtml.g.cs
 G:\csharp\.Net core\TrainChecklist\obj\Debug\netcoreapp3.0\Razor\Views\Projekt\Index.cshtml.g.cs
+G:\csharp\.Net core\TrainChecklist\bin\Debug\netcoreapp3.0\package-lock.json

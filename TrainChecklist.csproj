@@ -1,9 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UserSecretsId>aspnet-TrainChecklist-7CF5249B-B205-463A-87F1-8B0C44295AC6</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\myCalendar.css" />
+    <None Include="wwwroot\js\myCalendar.js" />
+  </ItemGroup>
 
 
   <ItemGroup>
@@ -37,6 +42,11 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
     <PackageReference Include="fluentvalidation.aspnetcore" Version="7.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
 
 </Project>

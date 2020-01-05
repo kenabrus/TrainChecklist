@@ -14354,6 +14354,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Pojazd\\Details.cshtml",
+      "TargetPath": "Views\\Pojazd\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -14369,8 +14374,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Pojazd\\Edit.cshtml",
+      "TargetPath": "Views\\Pojazd\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Pojazd\\Index.cshtml",
+      "TargetPath": "Views\\Pojazd\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Projekt\\Details.cshtml",
+      "TargetPath": "Views\\Projekt\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14379,13 +14399,43 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Projekt\\Create.cshtml",
+      "TargetPath": "Views\\Projekt\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Pojazd\\Delete.cshtml",
+      "TargetPath": "Views\\Pojazd\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Projekt\\Edit.cshtml",
+      "TargetPath": "Views\\Projekt\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Projekt\\Delete.cshtml",
+      "TargetPath": "Views\\Projekt\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Pojazd\\Create.cshtml",
+      "TargetPath": "Views\\Pojazd\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "g:\\csharp\\.Net core\\TrainChecklist\\Views\\Projekt\\Index.cshtml",
+      "TargetPath": "Views\\Projekt\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],
